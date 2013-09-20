@@ -10,14 +10,14 @@ program
   .option('-p,  --port <port>', 'specify the port [3000]'. Number, 3000)
 
 program
-  .command('serve <dir>')
+  .command('serve')
   .description('Serve the contents of the given directory')
   .action(commands.serve)
 
 program
   .command('deploy')
   .description('Deploy the ship into the JibSales Armada')
-  .action(commands.deploy)
+  .action(commands.deploy())
 
 program
   .command('test')

@@ -18,6 +18,7 @@
     "test": "mocha"
   },
   "dependencies": {
-    "commander": "~2.0.0"
+    "commander": "~2.0.0",
+    "connect": "~2.9.0"
   }
 }
