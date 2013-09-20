@@ -9,10 +9,15 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/JibSales/helm.git"
-  }, 
-  "bin": { "helm": "./bin/helm" },
+  },
+  "bin": {
+    "helm": "./bin/helm"
+  },
   "main": "./lib/index.js",
   "scripts": {
     "test": "mocha"
+  },
+  "dependencies": {
+    "commander": "~2.0.0"
   }
 }

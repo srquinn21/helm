@@ -1,0 +1,27 @@
+#! /usr/bin/env node
+
+var program = require('commander')
+  , commands = require('../lib/cli/commands');
+  // , server = require('../lib/server');
+
+program
+  .version(require('../package').version)
+  .usage('helm [options] [command]')
+  .option('-p,  --port <port>', 'specify the port [3000]'. Number, 3000)
+
+program
+  .command('serve <dir>')
+  .description('Serve the contents of the given directory')
+  .action(commands.serve)
+
+program
+  .command('deploy')
+  .description('Deploy the ship into the JibSales Armada')
+  .action(commands.deploy)
+
+program
+  .command('test')
+  .description('Test the ship ')
+  .action(commands.deploy)
+
+program.parse(process.argv);
