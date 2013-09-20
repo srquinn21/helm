@@ -1,0 +1,18 @@
+{
+  "name": "helm",
+  "version": "0.0.1",
+  "description": "A command line controller for my life",
+  "author": "Sean R. Quinn <sean@jibsales.com>",
+  "preferGlobal": true,
+  "private": true,
+  "homepage": "https://github.com/JibSales/helm",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JibSales/helm.git"
+  }, 
+  "bin": { "helm": "./bin/helm" },
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "mocha"
+  }
+}
