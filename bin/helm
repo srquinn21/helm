@@ -1,7 +1,8 @@
 #! /usr/bin/env node
 
 var program = require('commander')
-  , commands = require('../lib/cli/commands');
+  , utils = require('../lib/utils')
+  , commands = utils.lazyLoadModules('lib/commands');
   // , server = require('../lib/server');
 
 program
@@ -17,7 +18,12 @@ program
 program
   .command('deploy')
   .description('Deploy the ship into the JibSales Armada')
-  .action(commands.deploy())
+  .action(commands.deploy)
+
+program
+  .command('deploy')
+  .description('Deploy the ship into the JibSales Armada')
+  .action(commands.deploy)
 
 program
   .command('test')
