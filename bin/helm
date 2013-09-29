@@ -1,33 +1,28 @@
 #! /usr/bin/env node
 
-var program = require('commander')
-  , utils = require('../lib/utils')
-  , commands = utils.lazyLoadModules('lib/commands');
-  // , server = require('../lib/server');
+
+var program = require('commander');
 
 program
   .version(require('../package').version)
-  .usage('helm [options] [command]')
-  .option('-p,  --port <port>', 'specify the port [3000]'. Number, 3000)
+  .usage('[options] [command]')
+  .option('-p, --port <port>', 'specify the port [3000]', Number, 3000);
 
 program
-  .command('serve')
+  .command('login')
+  .description('Login to your Shipyard account.')
+  .action(require('../lib/commands/login'));
+
+program
+  .command('start')
   .description('Serve the contents of the given directory')
-  .action(commands.serve)
+  .action(require('../lib/commands/serve'));
 
 program
-  .command('deploy')
-  .description('Deploy the ship into the JibSales Armada')
-  .action(commands.deploy)
-
-program
-  .command('deploy')
-  .description('Deploy the ship into the JibSales Armada')
-  .action(commands.deploy)
-
-program
-  .command('test')
-  .description('Test the ship ')
-  .action(commands.deploy)
+  .command('*')
+  .description('Serve the contents of the given directory')
+  .action(function () {
+    program.help();
+  });
 
 program.parse(process.argv);

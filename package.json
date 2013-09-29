@@ -20,6 +20,8 @@
   "dependencies": {
     "commander": "~2.0.0",
     "connect": "~2.9.0",
-    "less-middleware": "~0.1.12"
+    "less-middleware": "~0.1.12",
+    "promptly": "~0.2.0",
+    "superagent": "~0.15.4"
   }
 }
